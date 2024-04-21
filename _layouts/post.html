@@ -7,11 +7,13 @@ layout: base
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      First published: <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      <label>First published:</label>
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
       </time>
       <br>
-      Last updated: <time class="dt-modified" datetime="{{ 'now' | date: '%Y-%m-%dT%H:%M:%S%:z' }}" itemprop="dateModified">
+      <label>Last updated:</label>
+      <time class="dt-modified" datetime="{{ 'now' | date: '%Y-%m-%dT%H:%M:%S%:z' }}" itemprop="dateModified">
         {{ 'now' | date: date_format }}
       </time>
       {%- if page.author -%}
